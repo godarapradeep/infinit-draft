@@ -1,6 +1,6 @@
 {
   "name": "infinit",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A Force.com Client application",
   "main": "main.js",
   "scripts": {
@@ -44,9 +44,6 @@
       "gatekeeperAssess": false,
       "entitlements": "build/entitlements.mac.plist",
       "entitlementsInherit": "build/entitlements.mac.plist",
-      "target": [
-        "dmg"
-      ],
       "electronLanguages": [
         "en"
       ]
