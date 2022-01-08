@@ -1,6 +1,6 @@
 {
   "name": "infinit",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A Force.com Client application",
   "main": "main.js",
   "scripts": {
