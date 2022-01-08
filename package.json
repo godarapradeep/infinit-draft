@@ -1,0 +1,84 @@
+{
+  "name": "infinit",
+  "version": "0.0.2",
+  "description": "A Force.com Client application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "postinstall": "electron-builder install-app-deps",
+    "build": "electron-builder --mac --win",
+    "release": "electron-builder --mac --publish always",
+    "debug": "node --nolazy --inspect-brk=5858 main.js"
+  },
+  "files": [
+    "!infinit-electron.jar",
+    "!infinit.db",
+    "!infinit.properties"
+  ],
+  "keywords": [
+    "Force.com",
+    "Deployment",
+    "Comparison",
+    "Retrieval"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/godarapradeep/infinit.git"
+  },
+  "author": "Pradeep Godara",
+  "license": "CC-BY-4.0",
+  "devDependencies": {
+    "electron": "^9.4.4",
+    "electron-builder": "^22.10.5",
+    "electron-notarize": "^1.1.1"
+  },
+  "build": {
+    "appId": "com.daas.infinit",
+    "productName": "infinit",
+    "copyright": "Copyright © year Pradeep Godara",
+    "mac": {
+      "category": "public.app-category.developer-tools",
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false,
+      "entitlements": "build/entitlements.mac.plist",
+      "entitlementsInherit": "build/entitlements.mac.plist",
+      "target": [
+        "dmg"
+      ],
+      "electronLanguages": [
+        "en"
+      ]
+    },
+    "publish": [
+      "github"
+    ],
+    "dmg": {
+      "icon": false,
+      "sign": false
+    },
+    "win": {
+      "target": "NSIS"
+    },
+    "extraFiles": [
+      "library"
+    ],
+    "afterSign": "scripts/notarize.js"
+  },
+  "dependencies": {
+    "clean": "^4.0.2",
+    "copy-dir": "^1.3.0",
+    "deep-equal": "^2.0.3",
+    "diff": "^4.0.2",
+    "electron-store": "^5.2.0",
+    "electron-updater": "4.3.8",
+    "fast-xml-parser": "^3.17.3",
+    "jsforce": "^1.9.3",
+    "shelljs": "^0.8.4"
+  },
+  "bugs": {
+    "url": "https://github.com/godarapradeep/infinit/issues"
+  },
+  "homepage": "https://github.com/godarapradeep/infinit#readme"
+}
